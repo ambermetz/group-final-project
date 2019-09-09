@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { ServicesService } from "../services/services.service";
 
 @Component({
-  selector: 'app-event-results',
-  templateUrl: './event-results.component.html',
-  styleUrls: ['./event-results.component.css']
+  selector: "app-event-results",
+  templateUrl: "./event-results.component.html",
+  styleUrls: ["./event-results.component.css"]
 })
 export class EventResultsComponent implements OnInit {
+  eventList: any[];
 
-  constructor() { }
+  constructor(private servicesService: ServicesService) {}
 
   ngOnInit() {
+    this.eventList = this.servicesService.eventList;
   }
-
 }

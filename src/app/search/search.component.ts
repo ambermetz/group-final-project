@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { ServicesService } from "../services/services.service";
+// import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: "app-search",
@@ -7,7 +8,12 @@ import { FormsModule } from "@angular/forms";
   styleUrls: ["./search.component.css"]
 })
 export class SearchComponent implements OnInit {
-  constructor() {}
+  eventList: any[];
+  constructor(private servicesService: ServicesService) {}
+
+  getData(keyword: any, startDateTime: any, endDateTime: any): void {
+    this.servicesService.getData(keyword, startDateTime, endDateTime);
+  }
 
   ngOnInit() {}
 }
