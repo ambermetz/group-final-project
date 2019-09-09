@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
+import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { EventResultsComponent } from "./event-results/event-results.component";
 import { SearchComponent } from "./search/search.component";
@@ -27,7 +28,12 @@ const appRoutes: Routes = [
     EventDetailsComponent,
     AccountComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,19 @@
-<form #form="ngForm">
-  <input type="text" name="searchTerm" ngModel placeholder="Where to?" />
-  <input type="date" name="searchDates" id="searchDates" />
-  <button routerLinkActive="active" routerLink="/event-results">
+<form
+  #form="ngForm"
+  (ngSubmit)="
+    getData(
+      form.value.keyword,
+      form.value.startDateTime,
+      form.value.endDateTime
+    )
+  "
+>
+  <input type="text" name="keyword" ngModel placeholder="Where to?" />
+  <label for="dateStart">Start Date</label>
+  <input type="date" name="startDateTime" id="startDateTime" ngModel />
+  <label for="dateEnd">End Date</label>
+  <input type="date" name="endDateTime" id="endDateTime" ngModel />
+  <button>
     Go to Event Results
   </button>
 </form>
