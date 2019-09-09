@@ -1,0 +1,35 @@
+body {
+    background-image: url("src/assets/mesut-kaya-eOcyhe5-9sQ-unsplash.jpg");
+    display: flex;
+}
+
+.nav-styling {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: flex-end; */
+    /* align-content: space-between; */
+    margin: 5px;
+}
+
+h2 {
+    font-family: 'Sofia', cursive;
+    color: black;
+    /* justify-content: flex-start; */
+    flex: 1;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}
+
+a:hover {
+    color: purple;
+}
