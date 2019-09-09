@@ -1,1 +1,7 @@
-<p>search works!</p>
+<form #form="ngForm">
+  <input type="text" name="searchTerm" ngModel placeholder="Where to?" />
+  <input type="date" name="searchDates" id="searchDates" />
+  <button routerLinkActive="active" routerLink="/event-results">
+    Go to Event Results
+  </button>
+</form>
