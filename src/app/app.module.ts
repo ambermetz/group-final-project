@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
+import { FormsModule } from "@angular/forms";
 import { EventResultsComponent } from "./event-results/event-results.component";
 import { SearchComponent } from "./search/search.component";
 import { ItineraryComponent } from "./itinerary/itinerary.component";
@@ -26,7 +27,7 @@ const appRoutes: Routes = [
     EventDetailsComponent,
     AccountComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes), FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
