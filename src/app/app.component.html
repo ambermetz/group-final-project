@@ -4,7 +4,13 @@
   </style>
 </head>
 <div class="nav-styling">
+  <a href="#main-menu" class="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </a>
   <nav>
+    <a href="#main-menu-toggle" class="menu-close">
+      <i class="fas fa-close"></i>
+    </a>
     <h2>Dateful</h2>
 
     <div>
@@ -13,5 +19,6 @@
       <a routerLinkActive="active" routerLink="/account">Account</a>
     </div>
   </nav>
+  <a href="#main-menu-toggle" class="backdrop" hidden></a>
 </div>
 <router-outlet></router-outlet>
