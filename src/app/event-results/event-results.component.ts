@@ -14,4 +14,8 @@ export class EventResultsComponent implements OnInit {
   ngOnInit() {
     this.eventList = this.servicesService.eventList;
   }
+
+  addToItinerary(index: number) {
+    this.servicesService.addToItinerary(index);
+  }
 }
