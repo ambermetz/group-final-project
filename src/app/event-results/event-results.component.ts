@@ -8,12 +8,16 @@ import { ServicesService } from "../services/services.service";
 })
 export class EventResultsComponent implements OnInit {
   eventList: any[];
+  visitList: any;
+  dineList: any;
 
   constructor(private servicesService: ServicesService) {}
 
   ngOnInit() {
     this.eventList = this.servicesService.eventList;
-    console.log(this.servicesService.returnGoogleData());
+    this.visitList = Object.values(this.servicesService.visitList);
+    this.dineList = this.servicesService.dineList;
+    // console.log(this.servicesService.returnDineList());
   }
 
   addToItinerary(index: number) {
