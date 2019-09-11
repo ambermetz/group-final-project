@@ -12,21 +12,23 @@ export class ServicesService {
   visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
 
-  // getGoogleDate(): Observable<any> {
-  //   return this.http.get("http://localhost:8080/");
-  // }
-
   getData(keyword: string, startDateTime: string, endDateTime: string) {
-    this.http.get("http://localhost:8080/restaurants").subscribe(response => {
-      console.log(response);
-      this.dineList = response;
-    });
+    this.http
+      .get("http://localhost:8080/restaurants", {
+        params: { location: keyword }
+      })
+      .subscribe(response => {
+        console.log(response);
+        this.dineList = response;
+      });
 
-    this.http.get("http://localhost:8080/visit").subscribe(response => {
-      console.log(response);
-      this.visitList = response;
-      this.router.navigate(["event-results"]);
-    });
+    this.http
+      .get("http://localhost:8080/visit", { params: { location: keyword } })
+      .subscribe(response => {
+        console.log(response);
+        this.visitList = response;
+        this.router.navigate(["event-results"]);
+      });
 
     this.http
       .get(
