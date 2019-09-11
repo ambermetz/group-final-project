@@ -11,6 +11,10 @@ export class ItineraryComponent implements OnInit {
   constructor(private servicesService: ServicesService) {}
 
   ngOnInit() {
-    this.itineraryList = this.servicesService.itineraryList;
+    // this.itineraryList = this.servicesService.itineraryList;
+    this.servicesService
+      .getItinerary()
+      .subscribe(response => (this.itineraryList = response));
+    console.log(this.itineraryList);
   }
 }
