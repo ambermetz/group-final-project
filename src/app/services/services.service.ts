@@ -46,7 +46,7 @@ export class ServicesService {
   returnDineList(): void {
     return this.dineList;
   }
-  returnVisitList(): void {
+  returnVisitList() {
     return this.visitList;
   }
 }

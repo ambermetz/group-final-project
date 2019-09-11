@@ -2,9 +2,38 @@
   <main>
     <div class="dine">
       <h2>Dine</h2>
+      <div class="visit" *ngFor="let dine of dineList; index as i">
+        <img src="{{ dine.photos.html_attributions }}" />
+
+        <!-- [""0""].photos[""0""].html_attributions[""0""] -->
+        <!-- [""0""].photos[""0""] -->
+        <div class="dineInfo">
+          <p>Name: {{ dine.name }}</p>
+          <!-- <p>Date: {{ event.dates.start.localDate }}</p> -->
+          <!-- <p>Event City: {{ event._embedded.venues[0].city.name }}</p> -->
+          <!-- <a href="{{ event.url }}">Purchase Tickets</a> -->
+          <button>
+            View Details
+          </button>
+          <button (click)="addToItinerary(i)">Add to Itinerary</button>
+        </div>
+      </div>
     </div>
     <div class="visit">
       <h2>Visit</h2>
+      <div class="visit" *ngFor="let visit of visitList; index as i">
+        <!-- <img src="{{ visit.images[0].url }}" /> -->
+        <div class="visitInfo" *ngFor="let item of visit">
+          <p>Event Name: {{ item.name }}</p>
+          <!-- <p>Date: {{ event.dates.start.localDate }}</p> -->
+          <!-- <p>Event City: {{ event._embedded.venues[0].city.name }}</p> -->
+          <!-- <a href="{{ event.url }}">Purchase Tickets</a> -->
+          <button>
+            View Details
+          </button>
+          <button (click)="addToItinerary(i)">Add to Itinerary</button>
+        </div>
+      </div>
     </div>
     <div class="explore">
       <h2>Explore</h2>
