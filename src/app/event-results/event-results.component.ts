@@ -13,7 +13,8 @@ export class EventResultsComponent implements OnInit {
 
   ngOnInit() {
     this.eventList = this.servicesService.eventList;
-    console.log(this.servicesService.returnGoogleData());
+    console.log(this.servicesService.returnVisitList());
+    console.log(this.servicesService.returnDineList());
   }
 
   addToItinerary(index: number) {

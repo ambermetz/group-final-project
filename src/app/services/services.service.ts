@@ -8,7 +8,8 @@ import { Router } from "@angular/router";
 export class ServicesService {
   eventList: any[] = [];
   itineraryList: any[] = [];
-  googleData: any;
+  dineList: any;
+  visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
 
   // getGoogleDate(): Observable<any> {
@@ -16,9 +17,14 @@ export class ServicesService {
   // }
 
   getData(keyword: string, startDateTime: string, endDateTime: string) {
-    this.http.get("http://localhost:8080/").subscribe(response => {
+    this.http.get("http://localhost:8080/restaurants").subscribe(response => {
       console.log(response);
-      this.googleData = response;
+      this.dineList = response;
+    });
+
+    this.http.get("http://localhost:8080/visit").subscribe(response => {
+      console.log(response);
+      this.visitList = response;
       this.router.navigate(["event-results"]);
     });
 
@@ -37,7 +43,10 @@ export class ServicesService {
     console.log(this.itineraryList);
   }
 
-  returnGoogleData(): void {
-    return this.googleData;
+  returnDineList(): void {
+    return this.dineList;
+  }
+  returnVisitList(): void {
+    return this.visitList;
   }
 }
