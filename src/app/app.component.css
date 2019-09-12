@@ -22,16 +22,19 @@ h2 {
   font-size: 30px;
 }
 
+.nav {
+  border-right: solid white 1px;
+}
+
 a {
   text-decoration: none;
   color: white;
-  padding: 5px;
-  margin-right: 20px;
+  /* padding: 5px; */
+  padding: 0px 15px;
 }
 
 a:hover {
   color: black;
 }
 
-@media only screen and (min-width: 768px) {
-}
+@media only screen and (min-width: 768px) {}
