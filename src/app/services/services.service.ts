@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 })
 export class ServicesService {
   eventList: any[] = [];
-  // itineraryList: any[] = [];
+  itineraryList: any;
   dineList: any;
   visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
@@ -40,10 +40,17 @@ export class ServicesService {
       });
   }
 
-
   getItinerary(): Observable<any> {
     return this.http.get("http://localhost:8080/Itinerary");
+  }
 
+  postItinerary(item: object) {
+    console.log(item);
+    return this.http
+      .post("http://localhost:8080/Itinerary", item)
+      .subscribe(response => {
+        this.itineraryList = response;
+      });
   }
 
   returnDineList(): void {

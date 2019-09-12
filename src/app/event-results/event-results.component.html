@@ -41,10 +41,9 @@
           <p>Date: {{ event.dates.start.localDate }}</p>
           <p>Event City: {{ event._embedded.venues[0].city.name }}</p>
           <a href="{{ event.url }}">Purchase Tickets</a>
-          <!-- <button (click)="viewEventDetails()">
-            View Details
-          </!-->
-          <button (click)="addToItinerary(i)">Add to Itinerary</button>
+          <button (click)="addToItinerary(i)">
+            Add to Itinerary
+          </button>
         </div>
       </div>
     </div>
