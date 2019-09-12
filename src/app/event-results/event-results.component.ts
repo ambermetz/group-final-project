@@ -20,7 +20,7 @@ export class EventResultsComponent implements OnInit {
     // console.log(this.servicesService.returnDineList());
   }
 
-  addToItinerary(index: number) {
-    this.servicesService.addToItinerary(index);
-  }
+  // addToItinerary(index: number) {
+  //   this.servicesService.addToItinerary(index);
+  // }
 }

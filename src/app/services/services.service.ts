@@ -1,13 +1,14 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class ServicesService {
   eventList: any[] = [];
-  itineraryList: any[] = [];
+  // itineraryList: any[] = [];
   dineList: any;
   visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
@@ -39,12 +40,10 @@ export class ServicesService {
       });
   }
 
-  // This needs to be changed to the post method
-  addToItinerary(index: number) {
-    console.log(index);
-    // this.itineraryList.push(this.eventList[index]);
-    // this.router.navigate(["itinerary"]);
-    console.log(this.itineraryList);
+
+  getItinerary(): Observable<any> {
+    return this.http.get("http://localhost:8080/Itinerary");
+
   }
 
   returnDineList(): void {
