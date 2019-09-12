@@ -32,16 +32,18 @@ export class ServicesService {
 
     this.http
       .get(
-        `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=2&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
+        `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
       )
       .subscribe(response => {
         this.eventList = response["_embedded"].events;
       });
   }
+
+  // This needs to be changed to the post method
   addToItinerary(index: number) {
     console.log(index);
-    this.itineraryList.push(this.eventList[index]);
-    this.router.navigate(["itinerary"]);
+    // this.itineraryList.push(this.eventList[index]);
+    // this.router.navigate(["itinerary"]);
     console.log(this.itineraryList);
   }
 
