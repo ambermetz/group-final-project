@@ -25,9 +25,8 @@ export class EventResultsComponent implements OnInit {
   //   this.servicesService.addToItinerary(index);
   // }
 
-  addToItinerary(item) {
-    console.log(event.target);
-    this.itineraryList = this.servicesService.postItinerary(this.itineraryList);
-    console.log(this.itineraryList);
+  addToItinerary(event) {
+    console.log(event);
+    this.itineraryList = this.servicesService.postItinerary(event);
   }
 }
