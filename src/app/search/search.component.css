@@ -1,20 +1,23 @@
-form {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.searchArea {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+}
+.keyword {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 button {
-    height: 50px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+  height: 50px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0px 10px;
 }
 
 input {
-    height: 40px;
-}
-
-.placeholder {
-    font-size: 20px;
+  height: 45px;
+  padding-left: 10px;
+  font-size: 14px;
 }

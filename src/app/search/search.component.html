@@ -1,25 +1,33 @@
-<form
-  #form="ngForm"
-  (ngSubmit)="
-    getData(
-      form.value.keyword,
-      form.value.startDateTime,
-      form.value.endDateTime
-    )
-  "
->
-  <input type="text" name="keyword" ngModel placeholder="Where to?" />
-  <label for="dateStart"></label>
-  <input
-    type="date"
-    name="startDateTime"
-    placeholder="Start Date"
-    id="startDateTime"
-    ngModel
-  />
-  <label for="dateEnd"></label>
-  <input type="date" name="endDateTime" id="endDateTime" ngModel />
-  <button>
-    Go
-  </button>
-</form>
+<div class="searchArea">
+  <form
+    #form="ngForm"
+    (ngSubmit)="
+      getData(
+        form.value.keyword,
+        form.value.startDateTime,
+        form.value.endDateTime
+      )
+    "
+  >
+    <input
+      class="keyword"
+      type="text"
+      name="keyword"
+      ngModel
+      placeholder="Where to?"
+    />
+    <label for="dateStart"></label>
+    <input
+      type="date"
+      name="startDateTime"
+      placeholder="Start Date"
+      id="startDateTime"
+      ngModel
+    />
+    <label for="dateEnd"></label>
+    <input type="date" name="endDateTime" id="endDateTime" ngModel />
+    <button>
+      Go
+    </button>
+  </form>
+</div>
