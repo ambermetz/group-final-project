@@ -33,21 +33,17 @@ export class ServicesService {
 
     this.http
       .get(
-        `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=2&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
+        `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
       )
       .subscribe(response => {
         this.eventList = response["_embedded"].events;
       });
   }
-  // addToItinerary(index: number) {
-  //   console.log(index);
-  //   this.itineraryList.push(this.eventList[index]);
-  //   this.router.navigate(["itinerary"]);
-  //   console.log(this.itineraryList);
-  // }
+
 
   getItinerary(): Observable<any> {
     return this.http.get("http://localhost:8080/Itinerary");
+
   }
 
   returnDineList(): void {

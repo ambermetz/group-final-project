@@ -1,5 +1,16 @@
-.events {
-    display: flex;
-    flex-flow: row wrap;
-    margin: 10px;
+/* Temporary styling for MVP - need to switch to mobile-first */
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100vw;
+}
+
+.results {
+  width: 33%;
+}
+
+img {
+  width: 300px;
+  height: 200px;
 }
