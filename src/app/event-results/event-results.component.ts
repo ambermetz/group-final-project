@@ -10,6 +10,7 @@ export class EventResultsComponent implements OnInit {
   eventList: any[];
   visitList: any;
   dineList: any;
+  itineraryList: object;
 
   constructor(private servicesService: ServicesService) {}
 
@@ -23,4 +24,10 @@ export class EventResultsComponent implements OnInit {
   // addToItinerary(index: number) {
   //   this.servicesService.addToItinerary(index);
   // }
+
+  addToItinerary(item) {
+    console.log(event.target);
+    this.itineraryList = this.servicesService.postItinerary(this.itineraryList);
+    console.log(this.itineraryList);
+  }
 }
