@@ -14,3 +14,13 @@ img {
   width: 300px;
   height: 200px;
 }
+
+button {
+  background-color: aquamarine;
+  height: 40px;
+}
+
+button:hover {
+  border: 1px solid #999;
+  color: #000;
+}
