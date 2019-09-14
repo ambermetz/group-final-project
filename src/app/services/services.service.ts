@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
-import { Observable } from "rxjs";
+import { Observable, combineLatest } from "rxjs";
 
 @Injectable({
   providedIn: "root"
@@ -13,31 +13,35 @@ export class ServicesService {
   visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
 
-  getData(keyword: string, startDateTime: string, endDateTime: string) {
-    this.http
-      .get("http://localhost:8080/restaurants", {
-        params: { location: keyword }
-      })
-      .subscribe(response => {
-        console.log(response);
-        this.dineList = response;
-      });
+  getData(
+    keyword: string,
+    startDateTime: string,
+    endDateTime: string
+  ): Observable<[any, any, any]> {
+    // that latest value emitted by the observables
+    return combineLatest(
+      this.getDineData(keyword),
+      this.getEventData(keyword, startDateTime, endDateTime),
+      this.getVisitData(keyword)
+    );
+  }
 
-    this.http
-      .get("http://localhost:8080/visit", { params: { location: keyword } })
-      .subscribe(response => {
-        console.log(response);
-        this.visitList = response;
-        this.router.navigate(["event-results"]);
-      });
+  getDineData(keyword: string) {
+    return this.http.get("http://localhost:8080/restaurants", {
+      params: { location: keyword }
+    });
+  }
 
-    this.http
-      .get(
-        `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
-      )
-      .subscribe(response => {
-        this.eventList = response["_embedded"].events;
-      });
+  getEventData(keyword: string, startDateTime: string, endDateTime: string) {
+    return this.http.get(
+      `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&radius=25&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
+    );
+  }
+
+  getVisitData(keyword: string) {
+    return this.http.get("http://localhost:8080/visit", {
+      params: { location: keyword }
+    });
   }
 
   getItinerary(): Observable<any> {
@@ -53,10 +57,10 @@ export class ServicesService {
       });
   }
 
-  returnDineList(): void {
-    return this.dineList;
-  }
-  returnVisitList() {
-    return this.visitList;
-  }
+  // returnDineList(): void {
+  //   return this.dineList;
+  // }
+  // returnVisitList() {
+  //   return this.visitList;
+  // }
 }
