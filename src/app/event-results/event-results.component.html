@@ -10,6 +10,7 @@
           <p>{{ event.name }}</p>
           <p>Address: {{ event.vicinity }}</p>
           <p>Rating: {{ event.rating }}</p>
+          <p>Price Level: {{ event.price_level }}</p>
           <!-- <a href="{{ event.url }}">Purchase Tickets</a> -->
           <button>
             Get Directions
@@ -23,10 +24,11 @@
       <div class="visit" *ngFor="let visit of visitList; index as i">
         <!-- <img src="{{ visit.images[0].url }}" /> -->
         <div class="visitInfo" *ngFor="let event of visit; index as i">
-          <div *ngIf="i < 4">
-            <p>Event Name: {{ event.name }}</p>
+          <div *ngIf="i < 1">
+            <p>{{ event.name }}</p>
             <p>Address: {{ event.vicinity }}</p>
             <p>Rating: {{ event.rating }}</p>
+            <p>Price Level: {{ event.price_level }}</p>
             <button>
               Get Directions
             </button>
@@ -40,8 +42,9 @@
       <div class="events" *ngFor="let event of eventList; index as i">
         <img src="{{ event.images[0].url }}" />
         <div class="eventInfo">
-          <p>Event Name: {{ event.name }}</p>
+          <p>{{ event.name }}</p>
           <p>Date: {{ event.dates.start.localDate }}</p>
+
           <p>Event City: {{ event._embedded.venues[0].city.name }}</p>
           <a href="{{ event.url }}">Purchase Tickets</a>
           <button (click)="addToItinerary(event)">
