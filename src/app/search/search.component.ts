@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ServicesService } from "../services/services.service";
 import { Router } from "@angular/router";
 
 @Component({
@@ -9,10 +8,7 @@ import { Router } from "@angular/router";
 })
 export class SearchComponent implements OnInit {
   eventList: any[];
-  constructor(
-    private servicesService: ServicesService,
-    private router: Router
-  ) {}
+  constructor(private router: Router) {}
 
   getData(keyword: any, startDateTime: any, endDateTime: any): void {
     this.router.navigate(["event-results"], {
