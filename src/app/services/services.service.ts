@@ -13,6 +13,25 @@ export class ServicesService {
   visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
 
+
+//   getData(keyword: string, startDateTime: string, endDateTime: string) {
+//     this.http
+//       .get("http://localhost:3000/restaurants", {
+//         params: { location: keyword }
+//       })
+//       .subscribe(response => {
+//         console.log(response);
+//         this.dineList = response;
+//       });
+
+//     this.http
+//       .get("http://localhost:3000/visit", { params: { location: keyword } })
+//       .subscribe(response => {
+//         console.log(response);
+//         this.visitList = response;
+//         this.router.navigate(["event-results"]);
+//       });
+
   getData(
     keyword: string,
     startDateTime: string,
@@ -45,13 +64,13 @@ export class ServicesService {
   }
 
   getItinerary(): Observable<any> {
-    return this.http.get("http://localhost:8080/Itinerary");
+    return this.http.get("http://localhost:3000/Itinerary");
   }
 
   postItinerary(item: object) {
     console.log(item);
     return this.http
-      .post("http://localhost:8080/Itinerary", item)
+      .post("http://localhost:3000/Itinerary", item)
       .subscribe(response => {
         this.itineraryList = response;
       });
