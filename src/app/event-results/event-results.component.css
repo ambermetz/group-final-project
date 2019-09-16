@@ -1,26 +1,51 @@
-/* Temporary styling for MVP - need to switch to mobile-first */
-
-main {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100vw;
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+  main {
+    background-color: rgba(255, 255, 255, 0.687);
+  }
 }
 
-.results {
-  width: 33%;
-}
+@media only screen and (min-width: 1281px) {
+  .mainSection {
+    height: 100vh;
+  }
 
-img {
-  width: 300px;
-  height: 200px;
-}
+  main {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+  }
 
-button {
-  background-color: aquamarine;
-  height: 40px;
-}
+  .content {
+    margin-top: 15px;
+  }
 
-button:hover {
-  border: 1px solid #999;
-  color: #000;
+  .results {
+    height: 100vh;
+    width: 33%;
+    background-color: rgba(255, 255, 255, 0.687);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 20px;
+  }
+
+  img {
+    width: 150px;
+    height: 100px;
+  }
+
+  button {
+    background-color: aquamarine;
+    height: 40px;
+  }
+
+  button:hover {
+    border: 1px solid #999;
+    color: #000;
+  }
 }

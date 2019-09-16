@@ -56,11 +56,4 @@ export class ServicesService {
         this.itineraryList = response;
       });
   }
-
-  // returnDineList(): void {
-  //   return this.dineList;
-  // }
-  // returnVisitList() {
-  //   return this.visitList;
-  // }
 }
