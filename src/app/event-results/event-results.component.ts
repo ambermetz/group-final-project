@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ServicesService } from "../services/services.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-event-results",
@@ -7,23 +8,34 @@ import { ServicesService } from "../services/services.service";
   styleUrls: ["./event-results.component.css"]
 })
 export class EventResultsComponent implements OnInit {
-  eventList: any[];
+  eventList: any;
   visitList: any;
   dineList: any;
   itineraryList: object;
 
-  constructor(private servicesService: ServicesService) {}
+  constructor(
+    private servicesService: ServicesService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
-    this.eventList = this.servicesService.eventList;
-    this.visitList = Object.values(this.servicesService.visitList);
-    this.dineList = this.servicesService.dineList;
-    // console.log(this.servicesService.returnDineList());
+    this.getData();
   }
 
-  // addToItinerary(index: number) {
-  //   this.servicesService.addToItinerary(index);
-  // }
+  getData() {
+    // when queryparams change, this will be called again
+    this.activatedRoute.queryParams.subscribe(
+      ({ keyword, startDateTime, endDateTime }) => {
+        this.servicesService
+          .getData(keyword, startDateTime, endDateTime)
+          .subscribe(([dineList, eventList, visitList]) => {
+            this.dineList = dineList;
+            this.eventList = eventList._embedded.events;
+            this.visitList = Object.values(visitList);
+          });
+      }
+    );
+  }
 
   addToItinerary(event) {
     console.log(event);
