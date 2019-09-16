@@ -13,24 +13,23 @@ export class ServicesService {
   visitList: any;
   constructor(private http: HttpClient, private router: Router) {}
 
+  //   getData(keyword: string, startDateTime: string, endDateTime: string) {
+  //     this.http
+  //       .get("http://localhost:3000/restaurants", {
+  //         params: { location: keyword }
+  //       })
+  //       .subscribe(response => {
+  //         console.log(response);
+  //         this.dineList = response;
+  //       });
 
-//   getData(keyword: string, startDateTime: string, endDateTime: string) {
-//     this.http
-//       .get("http://localhost:3000/restaurants", {
-//         params: { location: keyword }
-//       })
-//       .subscribe(response => {
-//         console.log(response);
-//         this.dineList = response;
-//       });
-
-//     this.http
-//       .get("http://localhost:3000/visit", { params: { location: keyword } })
-//       .subscribe(response => {
-//         console.log(response);
-//         this.visitList = response;
-//         this.router.navigate(["event-results"]);
-//       });
+  //     this.http
+  //       .get("http://localhost:3000/visit", { params: { location: keyword } })
+  //       .subscribe(response => {
+  //         console.log(response);
+  //         this.visitList = response;
+  //         this.router.navigate(["event-results"]);
+  //       });
 
   getData(
     keyword: string,
@@ -46,7 +45,7 @@ export class ServicesService {
   }
 
   getDineData(keyword: string) {
-    return this.http.get("http://localhost:8080/restaurants", {
+    return this.http.get("http://localhost:3000/restaurants", {
       params: { location: keyword }
     });
   }
@@ -58,7 +57,7 @@ export class ServicesService {
   }
 
   getVisitData(keyword: string) {
-    return this.http.get("http://localhost:8080/visit", {
+    return this.http.get("http://localhost:3000/visit", {
       params: { location: keyword }
     });
   }
