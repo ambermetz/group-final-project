@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   { path: "event-results", component: EventResultsComponent },
   { path: "search", component: SearchComponent },
   { path: "itinerary", component: ItineraryComponent },
-  { path: "event-details", component: EventDetailsComponent },
+  // { path: "event-details", component: EventDetailsComponent },
   { path: "account", component: AccountComponent },
   { path: "", redirectTo: "/search", pathMatch: "full" }
 ];
