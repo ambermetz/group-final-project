@@ -24,17 +24,15 @@ export class EventResultsComponent implements OnInit {
 
   getData() {
     // when queryparams change, this will be called again
-    this.activatedRoute.queryParams.subscribe(
-      ({ keyword, startDateTime, endDateTime }) => {
-        this.servicesService
-          .getData(keyword, startDateTime, endDateTime)
-          .subscribe(([dineList, eventList, visitList]) => {
-            this.dineList = dineList;
-            this.eventList = eventList._embedded.events;
-            this.visitList = Object.values(visitList);
-          });
-      }
-    );
+    this.activatedRoute.queryParams.subscribe(({ keyword, startDateTime }) => {
+      this.servicesService
+        .getData(keyword, startDateTime)
+        .subscribe(([dineList, eventList, visitList]) => {
+          this.dineList = dineList;
+          this.eventList = eventList._embedded.events;
+          this.visitList = Object.values(visitList);
+        });
+    });
   }
 
   addToItinerary(event) {

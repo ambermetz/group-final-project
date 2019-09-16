@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
+import { NgForm } from "@angular/forms";
+import { ServicesService } from "../services/services.service";
 
 @Component({
   selector: "app-search",
@@ -8,11 +10,15 @@ import { Router } from "@angular/router";
 })
 export class SearchComponent implements OnInit {
   eventList: any[];
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service: ServicesService) {}
 
-  getData(keyword: any, startDateTime: any, endDateTime: any): void {
+  getData(form: NgForm): void {
+    this.service.setDate(form.value.startDateTime);
     this.router.navigate(["event-results"], {
-      queryParams: { keyword, startDateTime, endDateTime }
+      queryParams: {
+        keyword: form.value.keyword,
+        startDateTime: form.value.startDateTime
+      }
     });
   }
 
