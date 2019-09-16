@@ -7,6 +7,7 @@
       <h2>Dine</h2>
       <div class="visit" *ngFor="let event of dineList; index as i">
         <div class="dineInfo" *ngIf="i < 4">
+          <!-- template expressions show how data flows from view -->
           <p>{{ event.name }}</p>
           <p>Address: {{ event.vicinity }}</p>
           <p>Rating: {{ event.rating }}</p>

@@ -18,6 +18,7 @@ const appRoutes: Routes = [
   { path: "account", component: AccountComponent },
   { path: "", redirectTo: "/search", pathMatch: "full" }
 ];
+// initial routing structure, we also have some routing setup in our method in search component, and a button in event results and itinerary pages html routerLink.
 
 @NgModule({
   declarations: [
