@@ -48,7 +48,9 @@
           <p>Date: {{ event.dates.start.localDate }}</p>
 
           <p>Event City: {{ event._embedded.venues[0].city.name }}</p>
-          <a href="{{ event.url }}">Purchase Tickets</a>
+          <button class="purchase">
+            <a href="{{ event.url }}">Purchase Tickets</a>
+          </button>
           <button (click)="addToItinerary(event)">
             Add to Itinerary
           </button>
