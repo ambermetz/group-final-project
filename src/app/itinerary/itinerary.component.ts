@@ -17,4 +17,11 @@ export class ItineraryComponent implements OnInit {
       .subscribe(response => (this.itineraryList = response));
     console.log(this.itineraryList);
   }
+
+  deleteItinerary(item: any) {
+    console.log(item);
+    this.servicesService
+      .deleteItinerary(item)
+      .subscribe(response => (this.itineraryList = response));
+  }
 }

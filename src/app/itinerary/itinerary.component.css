@@ -6,9 +6,22 @@
     text-shadow: 1px 1px 1px black;
 }
 
-.buttonStyles {
-    display: flex;
-    flex-direction: column;
+
+.myItinerary {
+  display: flex;
+  justify-content: center;
+  text-shadow: 1px 2px 2px white;
+  font-size: 26px;
+}
+
+.itinerary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fa-trash-alt {
+  padding-top: 20px;
 }
 
 .backButton {
@@ -38,22 +51,41 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
-    main {
-        background-color: rgba(255, 255, 255, 0.687);
-        margin: 20px;
-        border-radius: 5px;
-        padding: 10px;
-    }
-    .date {
-        text-shadow: 2px 2px 1px aquamarine;
-    }
-    .name {
-        font-size: 20px;
-    }
+  main {
+    background-color: rgba(255, 255, 255, 0.735);
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .myItinerary {
+    text-shadow: 2px 2px 1px aquamarine;
+  }
+
+  .date {
+    text-shadow: 2px 2px 1px aquamarine;
+  }
+
+  .name {
+    font-size: 20px;
+  }
 }
 
 @media only screen and (min-width: 1281px) {
-    main {
-        background-color: rgba(255, 255, 255, 0.687);
-    }
+  main {
+    background-color: rgba(255, 255, 255, 0.735);
+    margin: 20px;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .myItinerary {
+    text-shadow: 2px 2px 1px aquamarine;
+  }
+
+  .date {
+    text-shadow: 2px 2px 1px aquamarine;
+  }
+  .name {
+    font-size: 20px;
+  }
 }
