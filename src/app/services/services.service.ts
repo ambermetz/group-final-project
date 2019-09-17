@@ -13,6 +13,7 @@ export class ServicesService {
   dineList: any;
   visitList: any;
   date: any;
+  item: any;
   constructor(private http: HttpClient) {}
 
   getData(keyword: string, startDateTime: string): Observable<[any, any, any]> {
@@ -49,6 +50,11 @@ export class ServicesService {
 
   getItinerary(): Observable<any> {
     return this.http.get(`${environment.datefulApi}/Itinerary`);
+  }
+
+  deleteItinerary(item: any): Observable<any> {
+    console.log(item);
+    return this.http.delete(`http://localhost:8080/itinerary/${item}`);
   }
 
   postItinerary(item: any) {
