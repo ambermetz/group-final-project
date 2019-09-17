@@ -1,0 +1,29 @@
+.fa-reply {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.itineraryList {
+  margin: 20px;
+}
+
+.name {
+  margin-top: 10px;
+}
+
+.name,
+p {
+  font-size: 20px;
+}
+
+.date {
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  text-shadow: 2px 2px 1px white;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+}
+
+@media only screen and (min-width: 1281px) {
+}

@@ -2,8 +2,8 @@
   Back</i
 >
 
-<div *ngFor="let item of itineraryList; index as i">
-  <p>{{ item.startdatetime }}</p>
-  <p>{{ item.name }}</p>
+<div class="itineraryList" *ngFor="let item of itineraryList; index as i">
+  <h2 class="date">{{ item.startdatetime }}</h2>
+  <p class="name">{{ item.name }}</p>
   <p>{{ item.vicinity }}</p>
 </div>
