@@ -3,28 +3,36 @@ main {
   flex-direction: column;
   background-color: rgba(245, 245, 245, 0.666);
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   justify-content: center;
   border-radius: 5px;
+  align-items: center;
 }
 
 button {
   height: 30px;
-  background-color: white;
+  background-color: #58ab9c;
   border-radius: 10px;
+  color: white;
+  font-size: 14px;
+}
+
+button:hover {
+  color: white;
+  border: 1px solid #999;
 }
 
 img {
   height: 200px;
   width: 250px;
+  border: 1px solid black;
+  border-radius: 49%;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1280px) {
-}
+@media only screen and (min-width: 768px) and (max-width: 1280px) {}
 
-@media only screen and (min-width: 1281px) {
-}
+@media only screen and (min-width: 1281px) {}
