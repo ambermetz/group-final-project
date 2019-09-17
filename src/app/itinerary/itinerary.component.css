@@ -6,10 +6,10 @@
   text-shadow: 1px 1px 1px black;
 }
 
-/* .buttonStyles {
+.buttonStyles {
   display: flex;
   flex-direction: column;
-} */
+}
 
 .backButton {
   font-family: "Montserrat", sans-serif;
