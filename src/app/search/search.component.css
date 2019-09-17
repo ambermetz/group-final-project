@@ -4,26 +4,57 @@
   align-items: center;
   height: 80%;
 }
+
 .keyword {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
 button {
-  height: 50px;
+  height: 52px;
+  font-size: 14px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border: 1px solid gray;
   padding: 0px 10px;
+  background-color: aquamarine;
+}
+
+button:hover {
+  border: 1px solid #999;
+  color: white;
 }
 
 input {
-  height: 45px;
+  height: 50px;
   padding-left: 10px;
-  font-size: 14px;
+  font-size: 16px;
+  border: 1px solid gray;
+}
+
+#even {
+  height: 50px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
+  form {
+    flex-direction: row;
+  }
+  .keyword {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }
 
 @media only screen and (min-width: 1281px) {
+  form {
+    flex-direction: row;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
 }
