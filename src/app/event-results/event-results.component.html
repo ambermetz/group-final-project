@@ -46,6 +46,7 @@
         <div class="eventInfo">
           <p>{{ event.name }}</p>
           <p>Date: {{ event.dates.start.localDate }}</p>
+          <p>{{ event.dates.start.localTime }}</p>
 
           <p>Event City: {{ event._embedded.venues[0].city.name }}</p>
           <button class="purchase">

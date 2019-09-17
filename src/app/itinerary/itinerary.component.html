@@ -1,8 +1,11 @@
 <i class="fas fa-reply" routerLinkActive="active" routerLink="/event-results">
   Back</i
 >
-
-<div *ngFor="let item of itineraryList; index as i">
-  <p>Name: {{ item.name }}</p>
-  <p>Place:</p>
-</div>
+<main>
+  <div class="itineraryList" *ngFor="let item of itineraryList; index as i">
+    <h2 class="date">{{ item.startdatetime }}</h2>
+    <p class="name">{{ item.name }}</p>
+    <p>{{ item.vicinity }}</p>
+    <p>test</p>
+  </div>
+</main>

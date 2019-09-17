@@ -11,26 +11,10 @@ export class ServicesService {
   itineraryList: any;
   dineList: any;
   visitList: any;
-  constructor(private http: HttpClient, private router: Router) {}
+  date: any;
+  constructor(private http: HttpClient) {}
 
-  //   getData(keyword: string, startDateTime: string, endDateTime: string) {
-  //     this.http
-  //       .get("http://localhost:3000/restaurants", {
-  //         params: { location: keyword }
-  //       })
-  //       .subscribe(response => {
-  //         console.log(response);
-  //         this.dineList = response;
-  //       });
-
-  //     this.http
-  //       .get("http://localhost:3000/visit", { params: { location: keyword } })
-  //       .subscribe(response => {
-  //         console.log(response);
-  //         this.visitList = response;
-  //         this.router.navigate(["event-results"]);
-  //       });
-
+  
   getData(
     keyword: string,
     startDateTime: string,
@@ -39,9 +23,14 @@ export class ServicesService {
     // that latest value emitted by the observables
     return combineLatest(
       this.getDineData(keyword),
-      this.getEventData(keyword, startDateTime, endDateTime),
+      this.getEventData(keyword, startDateTime),
       this.getVisitData(keyword)
     );
+  }
+
+  setDate(date) {
+    console.log(date);
+    this.date = date;
   }
 
   getDineData(keyword: string) {
@@ -50,9 +39,9 @@ export class ServicesService {
     });
   }
 
-  getEventData(keyword: string, startDateTime: string, endDateTime: string) {
+  getEventData(keyword: string, startDateTime: string) {
     return this.http.get(
-      `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&radius=25&locale=*&startDateTime=${startDateTime}T00:00:00Z&endDateTime=${endDateTime}T23:59:59Z`
+      `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&radius=25&locale=*&startDateTime=${startDateTime}T00:00:00Z&T23:59:59Z`
     );
   }
 
@@ -66,8 +55,8 @@ export class ServicesService {
     return this.http.get("http://localhost:3000/Itinerary");
   }
 
-  postItinerary(item: object) {
-    console.log(item);
+  postItinerary(item: any) {
+    item.startdatetime = this.date;
     return this.http
       .post("http://localhost:3000/Itinerary", item)
       .subscribe(response => {
