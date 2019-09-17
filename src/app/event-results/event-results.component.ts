@@ -12,6 +12,7 @@ export class EventResultsComponent implements OnInit {
   visitList: any;
   dineList: any;
   itineraryList: object;
+  dinePics: any;
 
   constructor(
     private servicesService: ServicesService,
@@ -28,7 +29,8 @@ export class EventResultsComponent implements OnInit {
       this.servicesService
         .getData(keyword, startDateTime)
         .subscribe(([dineList, eventList, visitList]) => {
-          this.dineList = dineList;
+          this.dineList = dineList.result;
+          this.dinePics = dineList.photos;
           this.eventList = eventList._embedded.events;
           this.visitList = Object.values(visitList);
         });
