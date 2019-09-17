@@ -14,8 +14,12 @@ export class ServicesService {
   date: any;
   constructor(private http: HttpClient) {}
 
-  getData(keyword: string, startDateTime: string): Observable<[any, any, any]> {
-    // this.time = startDateTime;
+  
+  getData(
+    keyword: string,
+    startDateTime: string,
+    endDateTime: string
+  ): Observable<[any, any, any]> {
     // that latest value emitted by the observables
     return combineLatest(
       this.getDineData(keyword),
@@ -30,7 +34,7 @@ export class ServicesService {
   }
 
   getDineData(keyword: string) {
-    return this.http.get("http://localhost:8080/restaurants", {
+    return this.http.get("http://localhost:3000/restaurants", {
       params: { location: keyword }
     });
   }
@@ -42,19 +46,19 @@ export class ServicesService {
   }
 
   getVisitData(keyword: string) {
-    return this.http.get("http://localhost:8080/visit", {
+    return this.http.get("http://localhost:3000/visit", {
       params: { location: keyword }
     });
   }
 
   getItinerary(): Observable<any> {
-    return this.http.get("http://localhost:8080/Itinerary");
+    return this.http.get("http://localhost:3000/Itinerary");
   }
 
   postItinerary(item: any) {
     item.startdatetime = this.date;
     return this.http
-      .post("http://localhost:8080/Itinerary", item)
+      .post("http://localhost:3000/Itinerary", item)
       .subscribe(response => {
         this.itineraryList = response;
       });
