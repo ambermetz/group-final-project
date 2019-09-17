@@ -54,7 +54,7 @@ export class ServicesService {
 
   deleteItinerary(item: any): Observable<any> {
     console.log(item);
-    return this.http.delete(`http://localhost:8080/itinerary/${item}`);
+    return this.http.delete(`${environment.datefulApi}/itinerary/${item}`);
   }
 
   postItinerary(item: any) {
