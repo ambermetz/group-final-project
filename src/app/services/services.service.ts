@@ -16,6 +16,7 @@ export class ServicesService {
   item: any;
   constructor(private http: HttpClient) {}
 
+
   getData(keyword: string, startDateTime: string): Observable<[any, any, any]> {
     // that latest value emitted by the observables
     return combineLatest(
@@ -38,7 +39,7 @@ export class ServicesService {
 
   getEventData(keyword: string, startDateTime: string) {
     return this.http.get(
-      `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&radius=25&locale=*&startDateTime=${startDateTime}T00:00:00Z&T23:59:59Z`
+      `https://app.ticketmaster.com/discovery/v2/events?apikey=jmMcmgjfpxGx8rV6Z6PsXR5tpOEjuJHt&keyword=${keyword}&size=3&radius=25&locale=*&startDateTime=${startDateTime}T00:00:00Z`
     );
   }
 
@@ -49,18 +50,21 @@ export class ServicesService {
   }
 
   getItinerary(): Observable<any> {
+
     return this.http.get(`${environment.datefulApi}/Itinerary`);
   }
 
   deleteItinerary(item: any): Observable<any> {
     console.log(item);
     return this.http.delete(`${environment.datefulApi}/itinerary/${item}`);
+
   }
 
   postItinerary(item: any) {
     item.startdatetime = this.date;
     return this.http
       .post(`${environment.datefulApi}/Itinerary`, item)
+
       .subscribe(response => {
         this.itineraryList = response;
       });
