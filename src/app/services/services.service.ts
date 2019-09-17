@@ -31,7 +31,7 @@ export class ServicesService {
   }
 
   getDineData(keyword: string) {
-    return this.http.get(`${environment}/restaurants`, {
+    return this.http.get(`${environment.datefulApi}/restaurants`, {
       params: { location: keyword }
     });
   }
@@ -43,13 +43,13 @@ export class ServicesService {
   }
 
   getVisitData(keyword: string) {
-    return this.http.get(`${environment}/visit`, {
+    return this.http.get(`${environment.datefulApi}/visit`, {
       params: { location: keyword }
     });
   }
 
   getItinerary(): Observable<any> {
-    return this.http.get(`${environment}/Itinerary`);
+    return this.http.get(`${environment.datefulApi}/Itinerary`);
   }
 
   deleteItinerary(item: any): Observable<any> {
@@ -60,7 +60,7 @@ export class ServicesService {
   postItinerary(item: any) {
     item.startdatetime = this.date;
     return this.http
-      .post(`${environment}/Itinerary`, item)
+      .post(`${environment.datefulApi}/Itinerary`, item)
       .subscribe(response => {
         this.itineraryList = response;
       });
