@@ -58,6 +58,10 @@ p {
     padding: 10px;
   }
 
+  .myItinerary {
+    text-shadow: 2px 2px 1px aquamarine;
+  }
+
   .date {
     text-shadow: 2px 2px 1px aquamarine;
   }
@@ -73,6 +77,9 @@ p {
     margin: 20px;
     border-radius: 5px;
     padding: 10px;
+  }
+  .myItinerary {
+    text-shadow: 2px 2px 1px aquamarine;
   }
 
   .date {
