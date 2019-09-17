@@ -15,7 +15,7 @@ img {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
