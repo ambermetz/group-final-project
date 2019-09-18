@@ -11,7 +11,7 @@
           <p>Address: {{ event.vicinity }}</p>
           <p>Rating: {{ event.rating }}</p>
           <div class="buttonArea">
-            <button class="event_btn">
+            <button class="event_btn" (click)="getDirections(event.geometry.location)">
               Get Directions
             </button>
             <button class="event_btn" (click)="addToItinerary(event)">
@@ -29,7 +29,7 @@
             <p>Event Name: {{ event.name }}</p>
             <p>Address: {{ event.vicinity }}</p>
             <p>Rating: {{ event.rating }}</p>
-            <button class="event_btn">
+            <button class="event_btn" (click)=getDirections(event.geometry.location)>
               Get Directions
             </button>
             <button class="event_btn" (click)="addToItinerary(event)">

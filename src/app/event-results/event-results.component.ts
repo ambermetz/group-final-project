@@ -44,7 +44,7 @@ export class EventResultsComponent implements OnInit {
     this.itineraryList = this.servicesService.postItinerary(event);
   }
   getDirections(destination){
-    // console.log (destination)
+     //console.log (destination)
     this.servicesService.getLocation(destination)
     // this.router.navigate(["event-details"])
   }
