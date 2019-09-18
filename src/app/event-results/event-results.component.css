@@ -12,6 +12,7 @@ button {
   position: relative;
   left: 9%;
   bottom: 0;
+  padding: 0px 20px;
 }
 
 .dinePics {
@@ -37,14 +38,15 @@ button {
 }
 
 img {
-  width: 150px;
-  height: 100px;
-  border: 2px solid gray;
+  width: 400px;
+  height: 250px;
+  /* border: 2px solid gray; */
   border-radius: 5px;
 }
 
 .purchase {
-  background-color: #FFE0A9;
+  background-color: #ffe0a9;
+  padding: 0px 20px;
 }
 
 a {
@@ -60,38 +62,67 @@ h2 {
   text-shadow: 1px 2px 2px aquamarine;
 }
 
-img {
-  height: 175px;
-  width: 80%;
-}
-
 p {
   margin-left: 10%;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
-  main {
-    background-color: rgba(255, 255, 255, 0.687);
+  .mainSection {
+    height: 100vh;
   }
-  button {
-    height: 25px;
+  main {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+  }
+  .content {
+    margin-top: 15px;
+  }
+  .results {
+    height: 120vh;
+    width: 33%;
+    background-color: rgba(255, 255, 255, 0.687);
+    padding: 10px;
+    /* border-radius: 5px; */
+    /* margin: 20px; */
+  }
+  img {
+    justify-content: center;
+    width: 220px;
+    height: 150px;
+    margin-top: 5px;
+  }
+  .eventPics {
+    margin-left: 10%;
+    display: flex;
+    justify-content: left;
   }
   .dinePics {
     display: flex;
-    justify-content: center;
-    padding-top: 10px;
+    justify-content: left;
+    margin-left: 10%;
   }
-  img {
-    height: 175px;
-    width: 250px;
+  button {
+    height: 30px;
+    border-radius: 5px;
   }
-  p {
-    margin-left: 36.2%;
+  button:hover {
+    border: 1px solid #999;
+    color: white;
   }
-  .event_btn {
-    position: relative;
-    left: 35.5%;
-    bottom: 0;
+  .purchase {
+    background-color: #ffe0a9;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -115,7 +146,7 @@ p {
     margin-top: 15px;
   }
   .results {
-    height: 100vh;
+    height: 120vh;
     width: 33%;
     background-color: rgba(255, 255, 255, 0.687);
     padding: 10px;
@@ -123,8 +154,8 @@ p {
     margin: 20px;
   }
   img {
-    width: 250px;
-    height: 100px;
+    width: 300px;
+    height: 150px;
     margin-top: 5px;
   }
   .eventPics {
@@ -146,7 +177,7 @@ p {
     color: white;
   }
   .purchase {
-    background-color: #FFE0A9;
+    background-color: #ffe0a9;
   }
   a {
     text-decoration: none;

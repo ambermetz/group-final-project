@@ -7,15 +7,19 @@ main {
   display: flex;
   flex-direction: column;
   background-color: rgba(245, 245, 245, 0.666);
+  border: 1px solid gray;
   color: black;
   font-size: 18px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 400px;
   justify-content: center;
   border-radius: 15px;
   align-items: center;
+  padding: 20px 40px;
+  margin-top: 20px;
 }
 
 button {
@@ -24,6 +28,7 @@ button {
   border-radius: 5px;
   color: white;
   font-size: 18px;
+  padding: 0px 60px;
 }
 
 button:hover {
@@ -32,7 +37,7 @@ button:hover {
 }
 
 img {
-  height: 300px;
+  height: 350px;
   width: 275px;
   border: 2px solid gray;
   border-radius: 50%;
@@ -54,7 +59,7 @@ h2 {
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
   img {
-    height: 300px;
+    height: 370px;
     width: 275px;
   }
   main {
@@ -72,12 +77,14 @@ h2 {
 
 @media only screen and (min-width: 1281px) {
   img {
-    height: 300px;
-    width: 275px;
+    height: 370px;
+    width: 274px;
   }
   main {
     font-size: 24px;
     border-radius: 5px;
+    width: 550px;
+    margin-bottom: 20px;
   }
   button {
     font-size: 24px;
