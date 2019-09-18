@@ -1,16 +1,6 @@
-<div>
-  <!-- <img src="{{ event.images[0].url }}" /> -->
-  <!-- <p>Event: {{ event.name }}</p>
-  <p>Location: {{ event.location }}</p>
-  <p>Venue: {{ event.venueName }}</p>
-  <p>Date: {{ event.date }}</p>
-  <p>{{ event.description }}</p>
-  <p>${{ event.minPrice }} - {{ event.maxPrice }}</p>
-
-  <p>{{ event.type }}</p> -->
-  <!-- <a href="{{ event.url }}">Purchase Tickets</a> -->
-  <button>Get Directions</button>
-  <button routerLinkActive="active" routerLink="/itinerary">
-    Add To Itinerary
-  </button>
-</div>
+<main>
+  <h2>Directions</h2>
+    <div class="directions" *ngFor="let step of directions; index as i">
+      <div [innerHTML]='step.html_instructions'></div>
+    </div>
+</main>
