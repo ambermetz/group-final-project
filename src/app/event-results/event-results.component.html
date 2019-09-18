@@ -3,30 +3,36 @@
     <div class="results dine">
       <h2>Dine</h2>
       <div class="visit" *ngFor="let dine of dineList; index as i">
-        <div class="dineInfo" *ngIf="i < 4">
+        <div class="dineInfo" *ngIf="i < 3">
+          <div class="dinePics">
+            <img src="{{ dinePics[i].photoUrl }}" />
+          </div>
           <p>{{ dine.name }}</p>
           <p>Address: {{ dine.vicinity }}</p>
           <p>Rating: {{ dine.rating }}</p>
-          <img src="{{dinePics[i].photoUrl}}">
-          <!-- <a href="{{ event.url }}">Purchase Tickets</a> -->
-          <button>
+          <button class="event_btn">
             Get Directions
           </button>
-          <button (click)="addToItinerary(i)">Add to Itinerary</button>
+          <button class="event_btn" (click)="addToItinerary(i)">
+            Add to Itinerary
+          </button>
         </div>
       </div>
     </div>
     <div class="results visit">
       <h2>Visit</h2>
-      <div class="visit" *ngFor="let visit of visitList; index as i">g                 <div class="visitInfo" *ngFor="let item of visit; index as i">
-          <div *ngIf="i < 4">
+      <div class="visit" *ngFor="let visit of visitList; index as i">
+        <div class="visitInfo" *ngFor="let item of visit; index as i">
+          <div *ngIf="i < 1">
             <p>Event Name: {{ item.name }}</p>
             <p>Address: {{ item.vicinity }}</p>
             <p>Rating: {{ item.rating }}</p>
-            <button>
+            <button class="event_btn">
               Get Directions
             </button>
-            <button (click)="addToItinerary(i)">Add to Itinerary</button>
+            <button class="event_btn" (click)="addToItinerary(i)">
+              Add to Itinerary
+            </button>
           </div>
         </div>
       </div>
@@ -34,16 +40,22 @@
     <div class="results explore">
       <h2>Explore</h2>
       <div class="events" *ngFor="let event of eventList; index as i">
-        <img src="{{ event.images[0].url }}" />
+        <div class="eventPics">
+          <img src="{{ event.images[0].url }}" />
+        </div>
         <div class="eventInfo">
           <p>Event Name: {{ event.name }}</p>
           <p>Date: {{ event.dates.start.localDate }}</p>
           <p>Event City: {{ event._embedded.venues[0].city.name }}</p>
-          <a href="{{ event.url }}">Purchase Tickets</a>
+          <button class="purchase event_btn">
+            <a href="{{ event.url }}">Purchase Tickets</a>
+          </button>
           <!-- <button (click)="viewEventDetails()">
             View Details
           </!-->
-          <button (click)="addToItinerary(i)">Add to Itinerary</button>
+          <button class="event_btn" (click)="addToItinerary(i)">
+            Add to Itinerary
+          </button>
         </div>
       </div>
     </div>
