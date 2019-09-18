@@ -1,11 +1,14 @@
-<i class="fas fa-reply" routerLinkActive="active" routerLink="/event-results">
+<i
+  class="fas fa-reply"
+  routerLinkActive="active"
+  routerLink="https://dateful.herokuapp.com/event-results"
+>
   Back</i
 >
 <main>
   <h2>Directions</h2>
-    <div class="directions" *ngFor="let step of directions; index as i">
-    <div [innerHTML]='step.html_instructions'></div>
-      <div>in {{step.distance.text}}</div>
-      
-    </div>
+  <div class="directions" *ngFor="let step of directions; index as i">
+    <div [innerHTML]="step.html_instructions"></div>
+    <div>in {{ step.distance.text }}</div>
+  </div>
 </main>
