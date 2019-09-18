@@ -1,15 +1,41 @@
-
-.directions{
+main {
+    background-color: rgba(255, 255, 255, 0.687);
+    border-radius: 5px;
+    margin: 30px 30px;
+    padding: 30px;
+  }
+  
+  div{
+      padding-right: 10px;
+  }
+  .fa-reply {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: aquamarine;
+    font-size: 18px;
+    text-shadow: 1px 1px 1px black;
+  }
+  .fa-reply:hover {
+    text-shadow: 2px 2px 2px black;
+  }
+  
+  h2 {
     display: flex;
-
-}
-div{
-    padding-right: 10px;
-}
-@media only screen and (min-width: 768px) and (max-width: 1280px) {
-
-}
-
-@media only screen and (min-width: 1281px) {
-
-}
+    justify-content: center;
+    text-shadow: 1px 2px 2px aquamarine;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px solid grey;
+  }
+  
+  .directions {
+      display: flex;
+    margin: 5px 20px;
+    padding-top: 10px;
+  }
+  
+  @media only screen and (min-width: 768px) and (max-width: 1280px) {
+  }
+  
+  @media only screen and (min-width: 1281px) {
+  }
