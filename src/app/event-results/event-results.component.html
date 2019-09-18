@@ -2,35 +2,37 @@
   <main>
     <div class="results dine">
       <h2>Dine</h2>
-      <div class="visit" *ngFor="let dine of dineList; index as i">
+      <div class="visit" *ngFor="let event of dineList; index as i">
         <div class="dineInfo" *ngIf="i < 3">
           <div class="dinePics">
             <img src="{{ dinePics[i].photoUrl }}" />
           </div>
-          <p>{{ dine.name }}</p>
-          <p>Address: {{ dine.vicinity }}</p>
-          <p>Rating: {{ dine.rating }}</p>
-          <button class="event_btn">
-            Get Directions
-          </button>
-          <button class="event_btn" (click)="addToItinerary(i)">
-            Add to Itinerary
-          </button>
+          <p>{{ event.name }}</p>
+          <p>Address: {{ event.vicinity }}</p>
+          <p>Rating: {{ event.rating }}</p>
+          <div class="buttonArea">
+            <button class="event_btn">
+              Get Directions
+            </button>
+            <button class="event_btn" (click)="addToItinerary(event)">
+              Add to Itinerary
+            </button>
+          </div>
         </div>
       </div>
     </div>
     <div class="results visit">
       <h2>Visit</h2>
       <div class="visit" *ngFor="let visit of visitList; index as i">
-        <div class="visitInfo" *ngFor="let item of visit; index as i">
+        <div class="visitInfo" *ngFor="let event of visit; index as i">
           <div *ngIf="i < 1">
-            <p>Event Name: {{ item.name }}</p>
-            <p>Address: {{ item.vicinity }}</p>
-            <p>Rating: {{ item.rating }}</p>
+            <p>Event Name: {{ event.name }}</p>
+            <p>Address: {{ event.vicinity }}</p>
+            <p>Rating: {{ event.rating }}</p>
             <button class="event_btn">
               Get Directions
             </button>
-            <button class="event_btn" (click)="addToItinerary(i)">
+            <button class="event_btn" (click)="addToItinerary(event)">
               Add to Itinerary
             </button>
           </div>
@@ -53,7 +55,7 @@
           <!-- <button (click)="viewEventDetails()">
             View Details
           </!-->
-          <button class="event_btn" (click)="addToItinerary(i)">
+          <button class="event_btn" (click)="addToItinerary(event)">
             Add to Itinerary
           </button>
         </div>

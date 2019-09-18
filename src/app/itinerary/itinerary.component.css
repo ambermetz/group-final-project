@@ -1,11 +1,10 @@
 .fa-reply {
-    margin-left: 20px;
-    margin-top: 10px;
-    color: aquamarine;
-    font-size: 18px;
-    text-shadow: 1px 1px 1px black;
+  margin-left: 20px;
+  margin-top: 10px;
+  color: aquamarine;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px black;
 }
-
 
 .myItinerary {
   display: flex;
@@ -25,29 +24,30 @@
 }
 
 .backButton {
-    font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .fa-reply:hover {
-    text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px black;
 }
 
 .itineraryList {
-    margin: 20px;
+  margin: 20px;
 }
 
 .name {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
-.name, p {
-    font-size: 16px;
+.name,
+p {
+  font-size: 16px;
 }
 
 .date {
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
-    text-shadow: 2px 2px 1px white;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  text-shadow: 2px 2px 1px white;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
