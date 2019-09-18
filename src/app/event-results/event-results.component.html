@@ -9,7 +9,7 @@
           <p>Rating: {{ dine.rating }}</p>
           <img src="{{dinePics[i].photoUrl}}">
           <!-- <a href="{{ event.url }}">Purchase Tickets</a> -->
-          <button>
+          <button (click)="getDirections(dine.geometry.location)">
             Get Directions
           </button>
           <button (click)="addToItinerary(i)">Add to Itinerary</button>
@@ -23,7 +23,7 @@
             <p>Event Name: {{ item.name }}</p>
             <p>Address: {{ item.vicinity }}</p>
             <p>Rating: {{ item.rating }}</p>
-            <button>
+            <button (click) ="GetDirections()">
               Get Directions
             </button>
             <button (click)="addToItinerary(i)">Add to Itinerary</button>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ServicesService } from "../services/services.service";
 import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-event-results",
@@ -16,7 +17,8 @@ export class EventResultsComponent implements OnInit {
 
   constructor(
     private servicesService: ServicesService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -40,5 +42,10 @@ export class EventResultsComponent implements OnInit {
   addToItinerary(event) {
     console.log(event);
     this.itineraryList = this.servicesService.postItinerary(event);
+  }
+  getDirections(destination){
+    // console.log (destination)
+    this.servicesService.getLocation(destination)
+    // this.router.navigate(["event-details"])
   }
 }

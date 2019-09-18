@@ -14,8 +14,8 @@ export class ServicesService {
   visitList: any;
   date: any;
   item: any;
-  constructor(private http: HttpClient) {}
-
+  directions: any;
+  constructor(private http: HttpClient, private router: Router) {}
 
   getData(keyword: string, startDateTime: string): Observable<[any, any, any]> {
     // that latest value emitted by the observables
@@ -24,6 +24,23 @@ export class ServicesService {
       this.getEventData(keyword, startDateTime),
       this.getVisitData(keyword)
     );
+  }
+
+  getLocation(destination) {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(position => {
+        this.getDirections(destination, position).subscribe((response
+          )=>{
+            console.log(response);
+           this.directions=response
+           this.router.navigate(["event-details"])
+        })
+        })
+    }
+  }
+  getDirectionSteps(){
+    console.log(this.directions)
+    return this.directions
   }
 
   setDate(date) {
@@ -50,14 +67,21 @@ export class ServicesService {
   }
 
   getItinerary(): Observable<any> {
-
     return this.http.get(`${environment.datefulApi}/Itinerary`);
   }
 
   deleteItinerary(item: any): Observable<any> {
     console.log(item);
     return this.http.delete(`${environment.datefulApi}/itinerary/${item}`);
-
+  }
+  getDirections(destination, position):any {
+     console.log(destination, position)
+    return this.http.get(`${environment.datefulApi}/directions`, {
+      params: {
+        location: [position.coords.latitude, position.coords.longitude],
+        destination: destination
+      }
+    });
   }
 
   postItinerary(item: any) {
