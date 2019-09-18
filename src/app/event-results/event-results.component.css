@@ -40,7 +40,6 @@ button {
 img {
   width: 400px;
   height: 250px;
-  /* border: 2px solid gray; */
   border-radius: 5px;
 }
 
@@ -58,12 +57,25 @@ h2 {
   width: 100%;
   display: flex;
   justify-content: center;
-  text-decoration: underline;
   text-shadow: 1px 2px 2px aquamarine;
 }
 
 p {
   margin-left: 10%;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.dine {
+  padding-top: 15px;
+}
+
+.visit {
+  padding-top: 8px;
+}
+
+.events {
+  padding-top: 15px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
@@ -82,16 +94,11 @@ p {
     border-bottom: 2px solid grey;
     padding: 10px;
   }
-  .content {
-    margin-top: 15px;
-  }
   .results {
     height: 120vh;
     width: 33%;
     background-color: rgba(255, 255, 255, 0.687);
     padding: 10px;
-    /* border-radius: 5px; */
-    /* margin: 20px; */
   }
   img {
     justify-content: center;
@@ -142,11 +149,8 @@ p {
     border-bottom: 2px solid grey;
     padding: 10px;
   }
-  .content {
-    margin-top: 15px;
-  }
   .results {
-    height: 120vh;
+    height: 130vh;
     width: 33%;
     background-color: rgba(255, 255, 255, 0.687);
     padding: 10px;
@@ -155,8 +159,7 @@ p {
   }
   img {
     width: 300px;
-    height: 150px;
-    margin-top: 5px;
+    height: 165px;
   }
   .eventPics {
     margin-left: 10%;
