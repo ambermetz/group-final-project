@@ -9,6 +9,7 @@ import { SearchComponent } from "./search/search.component";
 import { ItineraryComponent } from "./itinerary/itinerary.component";
 import { EventDetailsComponent } from "./event-details/event-details.component";
 import { AccountComponent } from "./account/account.component";
+import { IntroPageComponent } from "./intro-page/intro-page.component";
 
 const appRoutes: Routes = [
   { path: "event-results", component: EventResultsComponent },
@@ -16,7 +17,8 @@ const appRoutes: Routes = [
   { path: "itinerary", component: ItineraryComponent },
   { path: "event-details", component: EventDetailsComponent },
   { path: "account", component: AccountComponent },
-  { path: "", redirectTo: "/search", pathMatch: "full" }
+  { path: "intro", component: IntroPageComponent },
+  { path: "", redirectTo: "/intro", pathMatch: "full" }
 ];
 // initial routing structure, we also have some routing setup in our method in search component, and a button in event results and itinerary pages html routerLink.
 
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     SearchComponent,
     ItineraryComponent,
     EventDetailsComponent,
-    AccountComponent
+    AccountComponent,
+    IntroPageComponent
   ],
   imports: [
     BrowserModule,

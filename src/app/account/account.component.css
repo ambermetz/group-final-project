@@ -1,42 +1,96 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 main {
   display: flex;
   flex-direction: column;
   background-color: rgba(245, 245, 245, 0.666);
+  border: 1px solid gray;
   color: black;
   font-size: 18px;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 400px;
   justify-content: center;
-  border-radius: 5px;
+  border-radius: 15px;
   align-items: center;
+  padding: 20px 40px;
+  margin-top: 20px;
 }
 
 button {
-  height: 30px;
+  height: 25px;
   background-color: #58ab9c;
-  border-radius: 10px;
+  border-radius: 5px;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
+  padding: 0px 60px;
 }
 
 button:hover {
-  color: white;
+  color: black;
   border: 1px solid #999;
 }
 
 img {
-  height: 200px;
-  width: 250px;
-  border: 1px solid black;
-  border-radius: 49%;
+  height: 350px;
+  width: 275px;
+  border: 2px solid gray;
+  border-radius: 50%;
+  margin: 5px;
 }
 
 a {
   color: black;
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1280px) {}
+h2 {
+  border-bottom: 2px solid gray;
+  margin-bottom: 10px;
+}
 
-@media only screen and (min-width: 1281px) {}
+.sean-paul {
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1280px) {
+  img {
+    height: 370px;
+    width: 275px;
+  }
+  main {
+    font-size: 24px;
+    border-radius: 5px;
+  }
+  button {
+    font-size: 20px;
+    height: 25px;
+  }
+  .sean-paul {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1281px) {
+  img {
+    height: 370px;
+    width: 274px;
+  }
+  main {
+    font-size: 24px;
+    border-radius: 5px;
+    width: 550px;
+    margin-bottom: 20px;
+  }
+  button {
+    font-size: 24px;
+    height: 30px;
+  }
+  .sean-paul {
+    font-size: 18px;
+  }
+}

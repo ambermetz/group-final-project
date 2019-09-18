@@ -2,15 +2,51 @@ button {
   background-color: #58ab9c;
   color: white;
   border-radius: 5px;
+  float: center;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  height: 25px;
+}
+
+.event_btn {
+  position: relative;
+  left: 9%;
+  bottom: 0;
+  padding: 0px 20px;
+}
+
+.dinePics {
+  display: flex;
+  justify-content: center;
+}
+
+.eventPics {
+  display: flex;
+  justify-content: center;
+}
+
+.dineInfo {
+  position: relative;
+}
+
+.visitInfo {
+  position: relative;
+}
+
+.eventInfo {
+  position: relative;
 }
 
 img {
-  width: 150px;
-  height: 100px;
+  width: 400px;
+  height: 250px;
+  /* border: 2px solid gray; */
+  border-radius: 5px;
 }
 
 .purchase {
-  background-color: #FFE0A9;
+  background-color: #ffe0a9;
+  padding: 0px 20px;
 }
 
 a {
@@ -18,12 +54,75 @@ a {
   color: black;
 }
 
+h2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: underline;
+  text-shadow: 1px 2px 2px aquamarine;
+}
+
+p {
+  margin-left: 10%;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 1280px) {
+  .mainSection {
+    height: 100vh;
+  }
   main {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+  }
+  h2 {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+  }
+  .content {
+    margin-top: 15px;
+  }
+  .results {
+    height: 120vh;
+    width: 33%;
     background-color: rgba(255, 255, 255, 0.687);
+    padding: 10px;
+    /* border-radius: 5px; */
+    /* margin: 20px; */
+  }
+  img {
+    justify-content: center;
+    width: 220px;
+    height: 150px;
+    margin-top: 5px;
+  }
+  .eventPics {
+    margin-left: 10%;
+    display: flex;
+    justify-content: left;
+  }
+  .dinePics {
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
   }
   button {
-    height: 25px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  button:hover {
+    border: 1px solid #999;
+    color: white;
+  }
+  .purchase {
+    background-color: #ffe0a9;
+  }
+  a {
+    text-decoration: none;
+    color: black;
   }
 }
 
@@ -39,6 +138,7 @@ a {
   h2 {
     display: flex;
     justify-content: center;
+    width: 95%;
     border-bottom: 2px solid grey;
     padding: 10px;
   }
@@ -46,7 +146,7 @@ a {
     margin-top: 15px;
   }
   .results {
-    height: 100vh;
+    height: 120vh;
     width: 33%;
     background-color: rgba(255, 255, 255, 0.687);
     padding: 10px;
@@ -54,22 +154,30 @@ a {
     margin: 20px;
   }
   img {
-    width: 150px;
-    height: 100px;
+    width: 300px;
+    height: 150px;
+    margin-top: 5px;
+  }
+  .eventPics {
+    margin-left: 10%;
+    display: flex;
+    justify-content: left;
+  }
+  .dinePics {
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
   }
   button {
-    /* background-color: #58ab9c; */
     height: 30px;
     border-radius: 5px;
-    /* color: white; */
   }
   button:hover {
     border: 1px solid #999;
     color: white;
-    /* background-color: ; */
   }
   .purchase {
-    background-color: #FFE0A9;
+    background-color: #ffe0a9;
   }
   a {
     text-decoration: none;

@@ -14,6 +14,7 @@ export class ServicesService {
   visitList: any;
   date: any;
   item: any;
+
   directions: any;
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -74,6 +75,7 @@ export class ServicesService {
     console.log(item);
     return this.http.delete(`${environment.datefulApi}/itinerary/${item}`);
   }
+  
   getDirections(destination, position):any {
      console.log(destination, position)
     return this.http.get(`${environment.datefulApi}/directions`, {
@@ -82,13 +84,13 @@ export class ServicesService {
         destination: destination
       }
     });
+
   }
 
   postItinerary(item: any) {
     item.startdatetime = this.date;
     return this.http
       .post(`${environment.datefulApi}/Itinerary`, item)
-
       .subscribe(response => {
         this.itineraryList = response;
       });
